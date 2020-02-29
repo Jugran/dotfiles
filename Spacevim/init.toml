@@ -15,7 +15,6 @@
     colorscheme_bg = "dark"
     # Disable guicolors in basic mode, many terminal do not support 24bit
     # true colors
-    filetree_direction = "left"
     enable_guicolors = true
     # Disable statusline separator, if you want to use other value, please
     # install nerd fonts
@@ -24,12 +23,6 @@
     buffer_index_type = 4
     enable_tabline_filetype_icon = true
     enable_statusline_mode = false
-    default_indent = 4
-    expand_tab = false
-    
-# Colors scheme
-[[layers]]
-  name = "colorscheme"
 
 # Enable autocomplete layer
 [[layers]]
@@ -42,12 +35,5 @@ name = 'shell'
 default_position = 'top'
 default_height = 30
 
-# C++ support 
 [[layers]]
-  name = "lang#c"
-  [layer.clang_std]
-    c = "c11"
-    cpp = "c++1z"
-[[layers]]
-	name = "lang#python"
-	format-on-save = 1
+name="colorscheme"
