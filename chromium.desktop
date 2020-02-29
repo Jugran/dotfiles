@@ -220,7 +220,7 @@ Name[zh_TW]=開啟新視窗
 Exec=/usr/bin/chromium %U
 
 [Desktop Action Incognito]
-Name=Open a New Window in incognito mode
+Name=Open in incognito mode
 Name[ast]=Abrir una ventana nueva en mou incógnitu
 Name[bg]=Отваряне на нов прозорец в режим \"инкогнито\"
 Name[bn]=একটি নতুন উইন্ডো খুলুন ইনকোগনিটো অবস্থায়
@@ -258,7 +258,7 @@ Name[zh_TW]=以匿名模式開啟新視窗
 Exec=/usr/bin/chromium --incognito
 
 [Desktop Action TempProfile]
-Name=Open a New Window with a temporary profile
+Name=Open a temporary profile
 Name[ast]=Abrir una ventana nueva con perfil temporal
 Name[bg]=Отваряне на Нов прозорец с временен профил
 Name[bn]=সাময়িক প্রোফাইল সহ একটি নতুন উইন্ডো খুলুন
