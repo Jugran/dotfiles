@@ -2,6 +2,11 @@
 	--bar-height: 120px;
 }
 
+/* Ad banner */
+#view-leaderboard-ad{
+visibility: hidden !important;
+}
+
 /*Round corner cover image*/
 .card-image,
 .card-placeholder-wrapper,
