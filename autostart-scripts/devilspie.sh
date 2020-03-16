@@ -2,5 +2,5 @@
 
 if [ x$DISPLAY != x ]
 then
-    devilspie -a >> /dev/null &
+  (devilspie >> /dev/null) &
 fi
