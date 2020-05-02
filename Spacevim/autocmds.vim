@@ -196,8 +196,8 @@ function! s:disable_welcome() abort
 endfunction
 
 func! s:transparent_background()
-	highlight Normal guibg=NONE ctermbg=NONE
-	highlight NonText guibg=NONE ctermbg=NONE
+	highlight Normal guibg=#ddffffff ctermbg=#ddffffff
+	highlight NonText guibg=#ddffffff ctermbg=#ddffffff
 endf
 autocmd ColorScheme * call s:transparent_background()
 
