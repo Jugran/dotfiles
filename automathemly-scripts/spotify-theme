@@ -1,0 +1,27 @@
+#!/bin/bash
+
+usage="Usage: $(basename $0) [--option]
+    script to set spotify dark/light theme
+options:
+    --dark 	
+    --light
+    "
+
+if [ -z $1 ]
+then
+    echo "no options given"
+    echo "$usage"
+    exit
+elif [ "$1" == "--dark" ]
+then
+    echo "setting dark mode..."
+    spicetify config color_scheme dracula && spicetify apply \
+        && spotify
+elif [ "$1" == "--light" ]
+then
+    echo "setting light mode..."
+    spicetify config color_scheme nord-light && spicetify apply \
+        && spotify 
+else
+    echo "inavlid option" "$usage"
+fi
