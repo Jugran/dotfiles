@@ -1,0 +1,11 @@
+# show username
+
+geometry_username()
+{
+    local _user=${USER}
+    ansi ${GEOMETRY_PATH_COLOR:-green} "%B$_user%b"
+}
+
+
+
+

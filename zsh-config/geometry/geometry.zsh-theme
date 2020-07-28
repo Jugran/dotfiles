@@ -1,0 +1,1 @@
+/home/jugran/.oh-my-zsh/geometry/geometry.zsh

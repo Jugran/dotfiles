@@ -7,21 +7,27 @@ options:
     --light
     "
 
+
+SPICETIFY="/home/jugran/spicetify-cli/spicetify"
+
 if [ -z $1 ]
 then
     echo "no options given"
     echo "$usage"
-    exit
+    exit 1
 elif [ "$1" == "--dark" ]
 then
     echo "setting dark mode..."
-    spicetify config color_scheme dracula && spicetify apply \
-        && spotify
+    # spicetify config color_scheme dracula && spicetify apply
+
+    "$SPICETIFY" config color_scheme dracula && "$SPICETIFY" apply
 elif [ "$1" == "--light" ]
 then
     echo "setting light mode..."
-    spicetify config color_scheme nord-light && spicetify apply \
-        && spotify 
+    # spicetify config color_scheme nord-light && spicetify apply
+    "$SPICETIFY" config color_scheme nord-light && "$SPICETIFY" apply
 else
     echo "inavlid option" "$usage"
 fi
+
+
