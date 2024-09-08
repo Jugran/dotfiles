@@ -1,0 +1,121 @@
+version = 2
+final_space = true
+console_title_template = '{{ .Shell }} in {{ .Folder }}'
+[[blocks]]
+    type = 'prompt'
+    alignment = 'left'
+    newline = true
+
+  [[blocks.segments]]
+    type = 'os'
+    style = 'plain'
+    template = '{{.Icon}} '
+    foreground = 'p:os'
+    
+  [[blocks.segments]]
+    type = 'session'
+    style = 'plain'
+    template = '<b>{{ .UserName }}</b> {{ if .SSHSession }}@{{ .HostName }}   {{ end }}'
+    foreground = 'p:blue'
+
+  [[blocks.segments]]
+    type = 'path'
+    style = 'plain'
+    template = '<b>·  {{ .Path }} </b>'
+    foreground = 'p:pink'
+
+    [blocks.segments.properties]
+      folder_icon = ''
+      home_icon = ' ~/'
+      style = 'full'
+
+[[blocks]]
+    type = 'prompt'
+    overflow = 'hide'
+    alignment = 'right'
+
+    [[blocks.segments]]
+        type = 'executiontime'
+        style = 'plain'
+        foreground = 'yellow'
+        background = 'transparent'
+        template = '{{ .FormattedMs }} '
+
+    [blocks.segments.properties]
+        threshold = 500
+        style = 'round'
+
+    [[blocks.segments]]
+        type = "python"
+        style = "plain"
+        foreground = "yellow"
+        template = " {{ if .Error }}{{ .Error }}{{ else }} {{ if .Venv }}[{{ .Venv }}]{{ end }} v{{ .Full }}{{ end }} "
+
+    [[blocks.segments]]
+        type = "node"
+        style = "plain"
+        foreground = "lightGreen"
+        template = " {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} "
+        [blocks.segments.properties]
+            fetch_version = true
+    [[blocks.segments]]
+        type = "go"
+        style = "plain"
+        foreground = "cyan"
+
+[[blocks]]
+    type = 'rprompt'
+    overflow = 'hide'
+  
+    
+    [[blocks.segments]]
+        type = 'git'
+        style = 'plain'
+        template = '{{ .HEAD }} <red>{{ ago .Commit.Timestamp | durationRound }}</> {{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}'
+        foreground = 'p:lavender'
+
+        [blocks.segments.properties]
+            branch_icon = ' '
+            branch_ahead_icon = '⇡'
+            branch_behind_icon = '⇣'
+            cherry_pick_icon = ' '
+            commit_icon = ' '
+            fetch_status = true
+            fetch_upstream_icon = true
+            merge_icon = ' '
+            no_commits_icon = ' '
+            rebase_icon = ' '
+            revert_icon = ' '
+            tag_icon = ' '
+            source = "cli"
+
+            [blocks.properties.mapped_branches]
+              "feature/*" = "🚀 "
+              "bugfix/*" = "🐛 "
+              "fix/*" = "🐛 "
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    type = 'text'
+    style = 'plain'
+    template = ''
+    foreground = 'p:closer'
+
+
+
+
+[secondary_prompt]
+    foreground = 'yellow'
+    background = 'transparent'
+    template = '❯❯ '
+
+[palette]
+    blue = '#8AADF4'
+    closer = 'p:os'
+    lavender = '#B7BDF8'
+    os = '#ACB0BE'
+    pink = '#F5BDE6'
