@@ -2,6 +2,7 @@ export PATH=/home/jugran/.local/share/zinit/polaris/bin:/usr/local/bin:/usr/loca
 export GPG_TTY=$(tty)
 export VISUAL=vim
 export EDITOR="$VISUAL"
+export PATH=$PATH:/home/jugran/.spicetify
 
 # Aliases
 alias ls='ls --color'
